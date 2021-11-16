@@ -1,0 +1,5 @@
+Please paste your list of test URLs below:
+http://google.com/
+http://ebay.com/
+http://duckduckgo.com/
+http://wikipedia.org/

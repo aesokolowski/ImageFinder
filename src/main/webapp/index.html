@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+	<title>Image Scraper</title>
+</head>
+
+<body>
+	<div class="content">
+		<div class="float-text" id="help-button">
+			Help
+		</div>
+		<div class="hidden" id="help-box">
+			Enter a domain name (i.e. http://google.com) and I'll attempt scrape it for images as well as images from
+			pages it links to that contain the domain name. 
+		</div>
+		<div class="input">
+			<div class="hidden" id="wait-frame">
+				<h1 id="wait-headline" class="primary-text-color"></h1>
+				<p class="message-box secondary-text-color">
+					The title will show error or success upon completion, feel free to do something else in your
+					browser while you wait due to 2.5 second delay between page requests. The tab title will show
+					a message when the task is completed.
+				</p>
+			</div>
+
+			<form class="vertical" id="form-frame">
+				<input type="text" class="textbox primary-text-color" name="url" value="http://" />
+				<button type="submit" id="submit-button" class="button secondary-text-color" name="submit">
+					Fetch Images
+				</button>
+			</form>
+
+			<div class="hidden" id="error-frame">
+                <h1 id="error-headline" class="primary-text-color"></h1>
+			    <!-- If there's extra time try to actually get the status code from the response, I got two ideas-->
+				<p class="message-box secondary-text-color">
+					Open the console to see what went wrong (ctrl+shift+j in Google Chrome). A 404 could mean
+					third time's a charm. A 403 or 429, not so much.
+				</p>
+				<button type="button" id="reset-button-error" class="button secondary-text-color" name="reset-error">
+					Try Again
+				</button>
+			</div>
+
+			<div class="hidden" id="success-frame">
+			    <h1 id="success-headline" class="alt-primary-text-color">Job complete.</h1>
+				<p  id="success-message" class="message-box alt-primary-text-color"></p>
+				<button type="button" id="reset-button-success" class="button secondary-text-color" name="reset-success">
+                    Scrape Again
+				</button>
+			</div>
+		</div>
+		<div class="output">
+			<ul class="results"></ul>
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+</html>
